@@ -1,0 +1,11 @@
+<h1> Editar produto [ <?=$dados['descricao'];?> ] </h1>
+
+<form method="post" action="">
+    <label for="label_descricao"> Descricao </label>
+    <input id="label_descricao" value="<?php echo $dados['descricao'] ?>" class="form-control mb-3" name="descricao">
+
+    <label for="label_valor"> Valor </label>
+    <input id="label_valor" value="<?=$dados['valor'] ?>" class="form-control mb-3" name="valor">
+
+    <button class="btn btn-primary">PRONTO</button>
+</form>
