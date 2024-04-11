@@ -21,12 +21,14 @@
     echo match ($url) {
         '/' => load('inicio'),
         '/restaurantes'=> (new RestauranteController)->list(),
+        '/restaurantes/mostrar'=> (new RestauranteController)->show(),
         '/restaurantes/adicionar'=> (new RestauranteController)->add(),
         '/restaurantes/editar' => (new RestauranteController)->edit(),
         '/restaurantes/excluir' => (new RestauranteController)->remove(),
         //'/restaurantes/pdf' => (new RestauranteController)->pdf(),
 
         '/produtos' => (new ProdutoController)->list(),
+        '/produtos/mostrar'=> (new RestauranteController)->show(),
         '/produtos/adicionar' => (new ProdutoController)->add(), 
         '/produtos/editar' => (new ProdutoController)->edit(), 
         '/produtos/excluir' => (new ProdutoController)->remove(),

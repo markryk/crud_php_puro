@@ -1,0 +1,13 @@
+<h1> Info restaurante </h1>
+
+<form method="post" action="">
+    <label for="nome">Nome</label>
+    <input type="text" id="nome" value="<?php echo $dados['nome'] ?>" class="form-control-plaintext mb-3" name="nome" readonly>
+
+    <label for="endereco">Endereço</label>
+    <input id="endereco" value="<?=$dados['endereco'] ?>" class="form-control-plaintext mb-3" name="endereco" readonly>
+
+    <!--<button class="btn btn-primary">PRONTO</button>-->
+    <a href='/restaurantes' class='btn btn-outline-dark'> Voltar </a>
+    <a href='/restaurantes/editar?id=<?=$dados['id']?>' class='btn btn-warning'> Editar </a>
+</form>

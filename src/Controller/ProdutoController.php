@@ -31,6 +31,15 @@
             $this->load('produto/add');
         }
 
+        public function show(): void {
+            $id = (int)$_GET['id']; //busca o id que está na URL (via arq. listar.phtml)
+
+            $dados = Produto::findOne($id);
+
+            //primeiro método a ser chamado é esse
+            $this->load('produto/show', $dados);
+        }
+
         public function edit(): void {
             //echo gettype($_GET['id']);
             $id = (int)$_GET['id']; //busca o id que está na URL (via arq. listar.phtml)

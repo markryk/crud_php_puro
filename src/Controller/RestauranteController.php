@@ -31,6 +31,15 @@
             $this->load('restaurante/add');
         }
 
+        public function show(): void {
+            $id = (int)$_GET['id']; //busca o id que está na URL (via arq. listar.phtml)
+
+            $dados = Restaurante::findOne($id);
+
+            //primeiro método a ser chamado é esse
+            $this->load('restaurante/show', $dados);
+        }
+
         /*public function save(): void {
             $this->load('restaurante/salvar');
         }*/
