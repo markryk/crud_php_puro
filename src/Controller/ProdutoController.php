@@ -33,6 +33,10 @@
         }
 
         public function edit(): void {
+<<<<<<< HEAD
+=======
+            //echo gettype($_GET['id']);
+>>>>>>> b43098c53a6f604451b5435d574c51f564e8eb7f
             $id = (int)$_GET['id']; //busca o id que está na URL (via arq. listar.phtml)
 
             if(!empty($_POST)){
