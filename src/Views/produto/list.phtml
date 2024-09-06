@@ -22,8 +22,9 @@
                     <td>{$cada['descricao']}</td>
                     <td>{$cada['valor']}</td>
                     <td>
-                        <a href='/produtos/editar?id={$cada['id']}' class='btn btn-outline-warning'>Editar</a>
-                        <a href='/produtos/excluir?id={$cada['id']}' class='btn btn-outline-danger'>Excluir</a>
+                        <a href='/produtos/mostrar?id={$cada['id']}' class='btn btn-primary'> Mostrar </a>
+                        <a href='/produtos/editar?id={$cada['id']}' class='btn btn-warning'> Editar </a>
+                        <a href='/produtos/excluir?id={$cada['id']}' class='btn btn-danger'> Excluir </a>
                     </td>
                 </tr>";
             }

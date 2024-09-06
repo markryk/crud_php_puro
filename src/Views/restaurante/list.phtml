@@ -9,9 +9,9 @@
 <table class="table mt-3">
     <thead>
         <tr>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>Ações</th>
+            <th> Nome </th>
+            <th> Endereço </th>
+            <th> Ações </th>
         </tr>
     </thead>
     <tbody class="table-group-divider">
@@ -22,8 +22,9 @@
                     <td>{$cada['nome']}</td>
                     <td>{$cada['endereco']}</td>
                     <td>
-                        <a href='/restaurantes/editar?id={$cada['id']}' class='btn btn-outline-warning'>Editar</a>
-                        <a href='/restaurantes/excluir?id={$cada['id']}' class='btn btn-outline-danger'>Excluir</a>
+                        <a href='/restaurantes/mostrar?id={$cada['id']}' class='btn btn-primary'> Mostrar </a>
+                        <a href='/restaurantes/editar?id={$cada['id']}' class='btn btn-warning'> Editar </a>
+                        <a href='/restaurantes/excluir?id={$cada['id']}' class='btn btn-danger'> Excluir </a>
                     </td>
                 </tr>";
             }
