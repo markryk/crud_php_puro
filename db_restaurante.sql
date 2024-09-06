@@ -91,3 +91,6 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-01-06 14:26:56
+
+ALTER TABLE tb_produtos ADD COLUMN created_at timestamp NULL DEFAULT current_timestamp();
+ALTER TABLE tb_produtos ADD COLUMN updated_at datetime DEFAULT NULL;

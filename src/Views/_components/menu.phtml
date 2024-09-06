@@ -1,31 +1,45 @@
-<!--<nav class="mb-3">
-    <a class="btn btn-outline-dark" href="/"> Início </a>
-    <a class="btn btn-outline-dark" href="/restaurantes"> Restaurantes </a>
-    <a class="btn btn-outline-dark" href="/produtos"> Produtos </a>
-    <a class="btn btn-outline-dark" href="/contato"> Contato </a>
-    <a class="btn btn-outline-dark" href="/admin"> Admin </a>
-</nav>-->
+<nav class="mb-3 d-flex justify-content-between">
 
-<ul class="nav nav-pills mb-3">
-  <!--<li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="/">Início</a>
-  </li>-->
-  <li class="nav-item p-1">
-    <a class="btn btn-outline-secondary" href="/">Início</a>
-  </li>
-  <li class="nav-item p-1">
-    <a class="btn btn-outline-secondary" href="/restaurantes">Restaurantes</a>
-  </li>
-  <li class="nav-item p-1">
-    <a class="btn btn-outline-secondary" href="/produtos">Produtos</a>
-  </li>
-  <li class="nav-item p-1">
-    <a class="btn btn-outline-secondary" href="/contato">Contato</a>
-  </li>
-  <li class="nav-item p-1">
-    <a class="btn btn-outline-secondary" href="/admin">Admin</a>
-  </li>
-  <!--<li class="nav-item">
-    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-  </li>-->
-</ul>
+  <!--<nav class="mb-3">
+      <a class="btn btn-outline-dark" href="/"> Início </a>
+      <a class="btn btn-outline-dark" href="/restaurantes"> Restaurantes </a>
+      <a class="btn btn-outline-dark" href="/produtos"> Produtos </a>
+      <a class="btn btn-outline-dark" href="/contato"> Contato </a>
+      <a class="btn btn-outline-dark" href="/admin"> Admin </a>
+  </nav>-->
+  <div>
+    <ul class="nav nav-pills mb-3">
+      <!--<li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/">Início</a>
+      </li>-->
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/">Início</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/restaurantes">Restaurantes</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/produtos">Produtos</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/contato">Contato</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/admin">Admin</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-secondary" href="/usuarios">Usuários</a>
+      </li>
+      <li class="nav-item p-1">
+        <a class="btn btn-outline-danger" href="/logout">Sair</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+      </li>-->
+    </ul>
+  </div>
+
+  <div>
+    Usuário: <?= App\Security\AuthSecurity::getUser()['name'] ?>
+  </div>
+</nav>

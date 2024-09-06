@@ -7,11 +7,12 @@
 
     abstract class AbstractController {
         //Essa função é onde se carrega a estrutura da página (cabeçalho, menu, conteudo da página, rodapé)    
-        public function load(string $view, array $dados = []): void {
+        public function load(string $view, array $dados = [], bool $exibirMenu = true): void {
             //esse "array $dados = []" vai ser usado no arq. "listar.phtml"
             //desenvolver cada página
             include "../src/Views/_templates/head.phtml";        
-            include "../src/Views/_components/menu.phtml";
+            
+            $exibirMenu && include "../src/Views/_components/menu.phtml";
 
             include "../src/Views/{$view}.phtml";
     

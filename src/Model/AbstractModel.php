@@ -14,7 +14,7 @@
 			return (new DefaultConnection)->abrir();
 		}
 
-		public static function count(string $table): int {
+		public static function qtd(string $table): int {
 			$resultado = self::db()->prepare("SELECT COUNT(*) AS qtd FROM {$table}");
 			$resultado->execute();
 
@@ -35,6 +35,16 @@
 			$result->execute();
 
 			return $result->fetch();
+		}
+
+		public static function findEmail(string $table, string $email): array {
+			$con = (new DefaultConnection)->abrir();
+
+			$result = $con->prepare("SELECT * FROM {$table} WHERE email='".$email."'");
+			var_dump($result);
+			//$result->execute();
+
+			return $result->fetchAll();
 		}
 
 		public static function delete(string $table, int $id): void {

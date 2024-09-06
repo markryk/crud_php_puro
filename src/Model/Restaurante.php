@@ -19,13 +19,17 @@
 			$this->endereco = strip_tags($endereco);
 		}
 
+		public static function count(): int {
+        	return parent::qtd(self::TABLE);
+    	}
+
 		public static function all(): array {
 			return parent::select(self::TABLE);
 		}
 
-		public static function qtde(): int {
+		/*public static function qtde(): int {
 			return parent::count(self::TABLE);
-		}
+		}*/
 
 		public static function findOne(int $id): array {
 			return parent::find(self::TABLE, $id);

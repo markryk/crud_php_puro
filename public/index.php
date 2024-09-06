@@ -5,21 +5,38 @@
 
     include '../vendor/autoload.php';
 
+    use App\Controller\InicioController;
     use App\Controller\RestauranteController; //chama o arq. em questão (RestauranteController.php), necessário à página
     use App\Controller\ProdutoController; //chama o arq. ProdutoController.php
+    use App\Controller\AuthController;
+    use App\Controller\UsuarioController;
+    use App\Security\AuthSecurity;
+
+    session_start();
+    date_default_timezone_set('America/Fortaleza');
 
     //route
     //$url = $_SERVER['REQUEST_URI']; //retorna uma '/' (na URL)
     $url = explode('?', $_SERVER['REQUEST_URI'])[0]; //retorna o que há antes de '?'
     //echo $url;
 
+    //Aqui é a tela de login, para não ver ela, comentar esse trecho
+    //Se não houver nenhum usuário logado, já inicia na tela de login
+    if (AuthSecurity::getUser() === null) {
+        echo match($url) {
+            default => (new AuthController)->login(),
+        };
+    
+        exit;
+    }
+
     //include '../Connection.php';
     //include '../src/Controller/AbstractController.php';
     //include '../src/Controller/RestauranteController.php';
 
-    //router
+    //Rotas para restaurantes e produtos
     echo match ($url) {
-        '/' => load('inicio'),
+        '/' => (new InicioController)->list(),
         '/restaurantes'=> (new RestauranteController)->list(),
         '/restaurantes/adicionar'=> (new RestauranteController)->add(),
         '/restaurantes/editar' => (new RestauranteController)->edit(),
@@ -30,6 +47,13 @@
         '/produtos/adicionar' => (new ProdutoController)->add(), 
         '/produtos/editar' => (new ProdutoController)->edit(), 
         '/produtos/excluir' => (new ProdutoController)->remove(),
+
+        '/usuarios' => (new UsuarioController)->list(),
+        '/usuarios/cadastro' => (new UsuarioController)->add(),
+        '/usuarios/editar' => (new UsuarioController)->edit(), 
+        '/usuarios/excluir' => (new UsuarioController)->remove(),
+
+        '/logout' => (new AuthController)->logout(),
 
         default => load('erro')
     };

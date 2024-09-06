@@ -26,18 +26,18 @@
 			return parent::find(self::TABLE, $id);
 		}
 
-        public static function qtde() {
-            return parent::count(self::TABLE);
+        public static function count() {
+            return parent::qtd(self::TABLE);
         }
 
         public function save(): void {
             $con = (new DefaultConnection())->abrir();
 
-            $result = $con->prepare("INSERT INTO tb_produtos (descricao, valor) VALUES (:descricao, :valor");
+            $result = $con->prepare("INSERT INTO tb_produtos (descricao, valor) VALUES (:descricao, :valor)");
             $result->execute([':descricao' => $this->descricao, ':valor' => $this->valor]);
         }
 
-        public static function update(int $id, string $descricao, string $valor): void {
+        public static function update(int $id, string $descricao, float $valor): void {
 			$con = (new DefaultConnection())->abrir();
 			
 			$result = $con->prepare("UPDATE tb_produtos SET descricao=:descricao, valor=:valor WHERE id={$id}");
