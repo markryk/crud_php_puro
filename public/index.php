@@ -45,7 +45,7 @@
         //'/restaurantes/pdf' => (new RestauranteController)->pdf(),
 
         '/produtos' => (new ProdutoController)->list(),
-        '/produtos/mostrar'=> (new RestauranteController)->show(),
+        '/produtos/mostrar'=> (new ProdutoController)->show(),
         '/produtos/adicionar' => (new ProdutoController)->add(), 
         '/produtos/editar' => (new ProdutoController)->edit(), 
         '/produtos/excluir' => (new ProdutoController)->remove(),
